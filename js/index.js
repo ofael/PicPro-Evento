@@ -21,9 +21,12 @@ for(let i = 0; i < estados.length; i++){
     peso: 30
 }*/
 
-let meuPrimeiroPedido = {
-    nome: "Hotdot",
-    peso: 300
-}
+function identificadorOpcoes(event){
+    const elemento = event.target;
 
-console.log(meuPrimeiroPedido.peso + "g")
+    if(elemento.tagName == "LI"){
+        const id = elemento.id;
+
+        const secaoEscolha = document.querySelector('div[data-id"${id}"]')
+    }
+}
