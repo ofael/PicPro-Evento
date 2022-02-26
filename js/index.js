@@ -1,32 +1,28 @@
-//let predio = ["terreo","primeiroAndar","segundoAndar"];
+const listaOpcoes = document.querySelector(".secaoDetalhesConta")
 
-//predio.push("quartoAndar") adiciona item no final da lista
-//predio.unshift("subsolo") adiciona item no começo da lista
-//predio.shift() RETIRA um item do começo da lista
-//predio.pop() RETIRA um item do final da lista
+listaOpcoes.addEventListener("click",identificador)
 
-/*for (let contador = 0; contador < 3; contador++){
-    console.log(contador);
-}*/
+function identificador(event){
 
-/*let estados = ["rio", "sao paulo", "bahia"]
+const li = event.target
 
-for(let i = 0; i < estados.length; i++){
-    console.log(estados[i])
-}*/
+    if(li.tagName == "LI"){
+        const id = li.id
 
-//objetos em java
-/*let minhaXicara = {
-    cor: marrom,
-    peso: 30
-}*/
+        const secaoEscolha = document.querySelector(`div[data-id="${id}"]`)
 
-function identificadorOpcoes(event){
-    const elemento = event.target;
+        //removendo todas as classes mostrar
+        removeClasseMostrar()
 
-    if(elemento.tagName == "LI"){
-        const id = elemento.id;
+        //adicionar uma classe
+        secaoEscolha.classList.add("mostrar")
+    }
+}
 
-        const secaoEscolha = document.querySelector('div[data-id"${id}"]')
+function removeClasseMostrar(){
+    const divs = document.querySelectorAll(".secaoTransacao .container div")
+    
+    for(let i = 0;i < divs.length; i++){
+        divs[i].classList.remove("mostrar")
     }
 }
